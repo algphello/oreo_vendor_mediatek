@@ -8,13 +8,7 @@ PRODUCT_PACKAGES += \
 #TARGET_TAP_TO_WAKE_NODE=
 
 # Mtk symbols & shim
-PRODUCT_PACKAGES += \
-    libshim_agps \
-    libshim_asc \
-    libshim_gui \
-    libshim_snd \
-    libshim_ui \
-    libshim_xlog
+include $(VND_MTK_PATH)/Libshims.mk
 
 # Vibrator HAL
 PRODUCT_PACKAGES += \

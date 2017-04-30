@@ -20,6 +20,16 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
 
+## libshim_omx
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := mtk-lp-omx.cpp
+LOCAL_MODULE := libshim_omx
+LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+
 ## libshim_ui
 include $(CLEAR_VARS)
 
