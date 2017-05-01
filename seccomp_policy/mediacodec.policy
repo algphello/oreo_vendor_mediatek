@@ -8,3 +8,5 @@ eventfd2: 1
 sendto: 1
 recvfrom: 1
 getsockopt: 1
+# ffmpeg needs this
+getdents64: 1
