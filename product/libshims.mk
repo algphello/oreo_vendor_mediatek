@@ -23,3 +23,8 @@ ifeq ($(LIBSHIM_AGPS_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_agps
 LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/vendor/bin/mtk_agpsd|libshim_agps.so
 endif
+ifeq ($(LIBSHIM_ATOMIC_SYMBOLS),true)
+PRODUCT_PACKAGES += libshim_atomic
+LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/system/lib/libcutils.so|libshim_atomic.so:/system/lib64/libcutils.so|libshim_atomic.so
+endif
+
