@@ -19,3 +19,14 @@ Include both `VendorConfig.mk` & `VendorProduct.mk` in your device tree like so 
 # How to apply the patches ?
 Patches located in the patches folder can be applied from the root of your android sources :  
 `. vendor/mediatek/install.sh` & `. vendor/mediatek/uninstall.sh` 
+
+# How to configure libshim ?
+Libshim is divided into bits which will generate `LINKER_FORCED_SHIM_LIBS` for you, you don't need to `export LD_SHIM_LIBS`.  
+The only configuration libshim needs is the following flags :  
+`#LIBSHIM_XLOG_SYMBOLS :=true`  
+`#LIBSHIM_SND_SYMBOLS := true`  
+`#LIBSHIM_UI_SYMBOLS := true`  
+`#LIBSHIM_GUI_SYMBOLS := true`  
+`#LIBSHIM_OMX_SYMBOLS := true`  
+`#LIBSHIM_AGPS_SYMBOLS := true`  
+(uncomment the flags you need)
