@@ -49,17 +49,18 @@ include $(BUILD_SHARED_LIBRARY)
 
 ## libshim_gui
 include $(CLEAR_VARS)
+
 LOCAL_SRC_FILES := \
-    gui/mtk_gui.cpp \
-    gui/SensorManager.cpp
+	gui/mtk_gui.cpp \
+	gui/SensorManager.cpp
 
 LOCAL_SHARED_LIBRARIES := \
-    libbinder \
-    libgui \
-    liblog \
-    libsensor \
-    libui \
-    libutils
+	libbinder \
+	libgui \
+	liblog \
+	libsensor \
+	libui \
+	libutils
 
 LOCAL_MODULE := libshim_gui
 LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
