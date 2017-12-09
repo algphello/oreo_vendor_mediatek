@@ -17,9 +17,9 @@ LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/system/lib/libgui.so|libs
 endif
 ifeq ($(LIBSHIM_OMX_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_omx
-LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/system/lib/libMtkOmxVdec.so|libshim_omx.so
+LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/vendor/lib/libMtkOmxVdec.so|libshim_omx.so
 endif
 ifeq ($(LIBSHIM_AGPS_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_agps
-LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/system/bin/mtk_agpsd|libshim_agps.so
+LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/vendor/bin/mtk_agpsd|libshim_agps.so
 endif
