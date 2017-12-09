@@ -1,6 +1,9 @@
 # Doze
 PRODUCT_PACKAGES += MeizuDoze
 
+# Ion
+PRODUCT_PACKAGES += libion
+
 # Gps
 PRODUCT_PACKAGES += \
     libcurl \
