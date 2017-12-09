@@ -5,7 +5,7 @@ LINKER_FORCED_SHIM_LIBS := /system/lib/liblog.so|libshim_xlog.so:/system/lib64/l
 endif
 ifeq ($(LIBSHIM_SND_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_snd
-LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/system/lib/hw/audio.primary.$(TARGET_BOARD_PLATFORM).so|libshim_snd.so
+LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/system/lib/libmedia.so|libshim_snd.so:/system/lib64/libmedia.so|libshim_snd.so
 endif
 ifeq ($(LIBSHIM_UI_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_ui
