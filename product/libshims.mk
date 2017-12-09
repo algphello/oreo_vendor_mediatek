@@ -1,4 +1,4 @@
-# Include symbols
+## Mtk symbols & shim
 ifeq ($(LIBSHIM_XLOG_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_xlog
 LINKER_FORCED_SHIM_LIBS := /system/lib/liblog.so|libshim_xlog.so:/system/lib64/liblog.so|libshim_xlog.so
