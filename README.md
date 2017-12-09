@@ -11,10 +11,11 @@ then simply `repo sync` your sources
 # How to use ?
 Include both `VendorConfig.mk` & `VendorProduct.mk` in your device tree like so :  
 - `BoardConfig.mk` :  
-`$(call inherit-product, $(SRC_TARGET_DIR)/vendor/mediatek/VendorConfig.mk)`  
+`-include vendor/mediatek/VendorConfig.mk`  
   
 - `device(_product).mk` :  
-`$(call inherit-product, $(SRC_TARGET_DIR)/vendor/mediatek/VendorProduct.mk)`  
+`-include vendor/mediatek/VendorProduct.mk`  
+Note: add these lines at the bottom of the mentioned files
 
 # How to apply the patches ?
 Patches located in the patches folder can be applied from the root of your android sources :  
@@ -29,4 +30,4 @@ The only configuration libshim needs is the following flags :
 `#LIBSHIM_GUI_SYMBOLS := true`  
 `#LIBSHIM_OMX_SYMBOLS := true`  
 `#LIBSHIM_AGPS_SYMBOLS := true`  
-(uncomment the flags you need)
+(copy/paste in `BoardConfig.mk` & uncomment the flags you need)
