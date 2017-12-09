@@ -12,6 +12,9 @@ PRODUCT_COPY_FILES += \
     $(VND_MTK_PATH)/configs/bluetooth/bt_stack.conf:vendor/etc/bluetooth/bt_stack.conf \
     $(VND_MTK_PATH)/configs/bluetooth/bt_stack.conf.sqc:vendor/etc/bluetooth/bt_stack.conf.sqc
 
+# Tethering
+PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
+
 # Telephony
 PRODUCT_COPY_FILES += \
     $(VND_MTK_PATH)/configs/telephony/ecc_list.xml:system/etc/ecc_list.xml \
