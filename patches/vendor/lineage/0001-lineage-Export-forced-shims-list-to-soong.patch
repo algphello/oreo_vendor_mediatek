@@ -1,0 +1,37 @@
+From dd9e633d2274339daf03ab49f52a36332f1fbdc2 Mon Sep 17 00:00:00 2001
+From: Rashed Abdel-Tawab <rashed@linux.com>
+Date: Wed, 8 Nov 2017 17:41:47 -0500
+Subject: [PATCH] lineage: Export forced shims list to soong
+
+Change-Id: Ie53c39e194ca4f15317beb4c485acf01b7d78781
+---
+ build/soong/android/variable.go | 1 +
+ build/soong/soong_config.mk     | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/build/soong/android/variable.go b/build/soong/android/variable.go
+index c56c36b8..c6e0e587 100644
+--- a/build/soong/android/variable.go
++++ b/build/soong/android/variable.go
+@@ -6,5 +6,6 @@ type Product_variables struct {
+ }
+ 
+ type ProductVariables struct {
++	Linker_forced_shim_libs  *string `json:",omitempty"`
+ 	Needs_text_relocations  *bool `json:",omitempty"`
+ }
+diff --git a/build/soong/soong_config.mk b/build/soong/soong_config.mk
+index 331f123c..6f978537 100644
+--- a/build/soong/soong_config.mk
++++ b/build/soong/soong_config.mk
+@@ -4,6 +4,7 @@ lineage_soong:
+ 	$(hide) (\
+ 	echo '{'; \
+ 	echo '"Lineage": {'; \
++	echo '    "Linker_forced_shim_libs": "$(LINKER_FORCED_SHIM_LIBS)",'; \
+ 	echo '    "Needs_text_relocations": $(if $(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)),true,false)'; \
+ 	echo '},'; \
+ 	echo '') > $(SOONG_VARIABLES_TMP)
+-- 
+2.11.0
+

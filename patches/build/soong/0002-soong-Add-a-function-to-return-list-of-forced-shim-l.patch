@@ -1,0 +1,25 @@
+From cf146811021a5f267faef7d191aa3c3a073d2dfa Mon Sep 17 00:00:00 2001
+From: Mister Oyster <oysterized@gmail.com>
+Date: Mon, 18 Dec 2017 13:14:35 +0100
+Subject: [PATCH] soong: Add a function to return list of forced shim libs
+
+Change-Id: I87343b922019db4240148ed9f5c04bfa37f9dd4b
+---
+ android/config.go | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/android/config.go b/android/config.go
+index 268d121..4bae523 100644
+--- a/android/config.go
++++ b/android/config.go
+@@ -501,3 +501,7 @@ func (c *deviceConfig) CoverageEnabledForPath(path string) bool {
+ 	}
+ 	return coverage
+ }
++
++func (c *deviceConfig) ForcedShims() string {
++	return String(c.config.ProductVariables.Lineage.Linker_forced_shim_libs)
++}
+-- 
+2.11.0
+
