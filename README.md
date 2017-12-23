@@ -31,3 +31,6 @@ The only configuration libshim needs is the following flags :
 `#LIBSHIM_OMX_SYMBOLS := true`  
 `#LIBSHIM_AGPS_SYMBOLS := true`  
 (copy/paste in `BoardConfig.mk` & uncomment the flags you need)
+
+# Optional :
+- building TWRP in LOS-15.x tree (temp fix) : `patches/optional/0001-TEMP-TWRP-fix-recovery-build-with-f2fs-on-LOS-15.x-t.patch`
