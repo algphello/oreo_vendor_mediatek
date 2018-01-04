@@ -9,6 +9,9 @@ PRODUCT_PACKAGES += \
     libcurl \
     libnl_2
 
+# USB
+PRODUCT_PACKAGES += com.android.future.usb.accessory
+
 # Wifi mtk wpa_supp lib
 PRODUCT_PACKAGES += lib_driver_cmd_mt66xx
 
