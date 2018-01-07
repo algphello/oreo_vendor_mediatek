@@ -19,6 +19,10 @@ ifeq ($(LIBSHIM_OMX_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_omx
 LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/vendor/lib/libMtkOmxVdec.so|libshim_omx.so
 endif
+ifeq ($(LIBSHIM_BIONIC_SYMBOLS),true)
+PRODUCT_PACKAGES += libshim_bionic
+LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/system/lib/libc.so|libshims_bionic.so:/system/lib64/libc.so|libshims_bionic.so
+endif
 ifeq ($(LIBSHIM_AGPS_SYMBOLS),true)
 PRODUCT_PACKAGES += libshim_agps
 LINKER_FORCED_SHIM_LIBS := $(LINKER_FORCED_SHIM_LIBS):/vendor/bin/mtk_agpsd|libshim_agps.so

@@ -29,6 +29,17 @@ LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
+
+## libshim_bionic
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := bionic.cpp
+LOCAL_MODULE := libshims_bionic
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_SHARED_LIBRARIES := libc
+include $(BUILD_SHARED_LIBRARY)
+
+
 ## libshim_omx
 include $(CLEAR_VARS)
 

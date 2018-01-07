@@ -29,8 +29,9 @@ The only configuration libshim needs is the following flags :
 `#LIBSHIM_UI_SYMBOLS := true`  
 `#LIBSHIM_GUI_SYMBOLS := true`  
 `#LIBSHIM_OMX_SYMBOLS := true`  
+`#LIBSHIM_BIONIC_SYMBOLS := true`
 `#LIBSHIM_AGPS_SYMBOLS := true`  
-`#LIBSHIM_ATOMIC_SYMBOLS := true`
+`#LIBSHIM_ATOMIC_SYMBOLS := true`  
 (copy/paste in `BoardConfig.mk` & uncomment the flags you need)
 
 # Optional :
